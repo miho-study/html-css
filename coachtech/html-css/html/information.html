@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>information</title>
+</head>
+<body>
+    <h1>情報入力</h1>
+    <form action="detail.html" method="get">
+        <p><label>お名前:<input type="text" name="username" /></label></p>
+        <p><label>性別:<select name="sex">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                    <option value="その他">その他</option>
+                </select></label></p>
+        <p><label>生年月日:<input type="date" name="birthday" /></label></p>
+        <p><label>住所<input type="text" name="address" /></label></p>
+        <form class="h-adr">
+            <span class="p-country-name" style="display:none;">Japan</span>
+            郵便番号：<input type="text" class="p-postal-code" size="8" maxlength="8"><br>
+            都道府県：<input type="text" class="p-region" /><br>
+            地区町村：<input type="text" class="p-locality" /><br>
+            町名番地：<input type="text" class="p-street-address p-extended-address" />
+        </form> 
+        <p><label>電話番号:<input type="tel" name="telephone number" /></label></p>
+        <p><label>メールアドレス:<input type="email" name="email" /></label></p>
+        <p><label>パスワード:<input type="password" name="password" /></label></p>
+        <p><label>弊社の利用規約に同意しますか<input type="checkbox" name="checkbox" /></label></p>
+        <p><label><input type="submit" name="submit" /></label></p>
+        <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+    </form>
+</body>
+</html>
