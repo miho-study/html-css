@@ -1,72 +1,24 @@
-body{
-    width: 360px;
-    /* 幅 */
-    margin: 100px auto 0;
-    /* cardの配置 */
-}
-.card{
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
-    /* 影 */
-    display: flex;
-    /* フレックスボックスの設定 */
-    flex-flow: column;
-    /* コンテナのアイテムを上から下へ並べる */
-}
-.card_img img {
+.float{
+    max-width: 760px;
     width: 100%;
-    /* 画像幅を360pxに合わせる */
+    margin: 60px auto;
 }
-.card_category{
-    width: 90px;
-    /* 幅 */
-    height: 30px;
-    /* 高さ */
-    text-align: center;
-    /* カテゴリーを真ん中へ */
-    line-height: 30px;
-    /* カテゴリーを中央へ */
-    background-color: #088;
-    /* 後ろの色 */
-    color: white;
-    /* 文字の色 */
-    font-size: 14px;
-    /* 文字のサイズ */
-    margin-top: 15px;
-    /* 上の余白 */
-    margin-left: 10px;
-    /* 左の余白 */
+h1{
+    font-size: 24px;
+    margin-bottom: 20px;
 }
-.card_title{
-    padding-bottom: 30px;
-    /* 下の余白 */
-    font-size: 18px;
-    /* 文字サイズ */
-    line-height: 1.5;
-    /* 行間設定 */
-    margin: 10px;
-    /* 周りの余白 */
-}
-.card_sub{
-    display: flex;
-    /* フレックスボックスの設定 */
-    justify-content: flex-end;
-    /* 右側に寄せる */
-}
-.card_tag{
-    padding-bottom: 15px;
-    /* 下の余白 */
-    font-size: 14px;
-    /* 文字サイズ */
-    color: #088;
-    /* 文字の色 */
-}
-.card_date{
+.float_img{
+    width: 400px;
+    float: right;
     margin-left: 20px;
-    /* 左の余白 */
-    font-size: 14px;
-    /* 文字サイズ */
-    margin-right: 25px;
-    /* 右の余白 */
-    color:#888888;
-    /* 文字の色 */
+    margin-bottom: 20px;
+}
+/* レスポンシブル対応 */
+.float_img img {
+    max-width: 100%;
+    /* 親要素の幅を超えないように */
+    height: auto;
+    /* 縦横比を保持 */
+    display: block;
+    /* 余計なスペースを防ぐ */
 }

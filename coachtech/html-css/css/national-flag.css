@@ -1,0 +1,230 @@
+.flag{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+.container{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.name {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ロシア */
+.russia {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    /* 国旗の幅 */
+    height: 200px;
+    /* 国旗の高さ */
+}
+.white-1,
+.blue-1,
+.red-1 {
+    width: 100%;
+    height: 33.33%;
+    /* 各色が3分の1を占める */
+}
+.white-1 {
+    background-color: white;
+}
+.blue-1 {
+    background-color: blue;
+}
+.red-1 {
+    background-color: red;
+}
+
+/* ドイツ */
+.germany{
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+
+}
+.black-1,
+.red-2,
+.yellow-1 {
+    width: 100%;
+    height: 33.3%;
+}
+.black-1{
+    background-color: black;
+}
+.red-2 {
+    background-color: red;
+}
+.yellow-1 {
+    background-color: yellow;
+}
+
+/* フランス */
+.france {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 200px;
+}
+.blue-2,
+.white-2,
+.red-3 {
+    width: 33.3%;
+    height: 100%;
+}
+.blue-2 {
+    background-color: blue;
+}
+.white-2{
+    background-color: white;
+}
+.red-3 {
+    background-color: red;
+}
+/* イタリア */
+.italy {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height: 200px;
+}
+.green-1,
+.white-3,
+.red-4 {
+    width: 33.33%;
+    height: 100%;
+}
+.green-1 {
+    background-color: green;
+}
+.white-3 {
+    background-color: white;
+}
+.red-4 {
+    background-color: red;
+}
+
+/* チェコ */
+.czech{
+    border: 1px solid #000;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    /* 相対位置 */
+}
+.blue-3{
+    width: 100px;
+    height: 200px;
+    background-color: blue;
+    position: absolute;
+    /* 絶対位置 */
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    /* 三角形 */
+}
+.white-4,
+.red-5{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+}
+.white-4 {
+    background-color: white;
+}
+.red-5 {
+    background-color: red;
+}
+
+/* 日本 */
+.japan{
+    border: 1px solid #000;
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+.white-5{
+    background-color: white;
+}
+.red-6{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+        /* 中央配置 */
+}
+
+/* スイス */
+.switzerland{
+    border: 1px solid #000;
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+.red-7{
+    width: 300px;
+    height: 200px;
+    background-color: red;
+}
+.white-6{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    flex-direction: column;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* 前に出す */
+}
+.white-7{
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    flex-direction: row;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* ベトナム */
+.vietnam{
+    border: 1px solid #000;
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+.red-8{
+    width: 300px;
+    height: 200px;
+    background-color: red;
+    position: relative;
+}
+.yellow-2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    clip-path: polygon(50% 0%, 61% 35%, 100% 35%, 69% 57%, 82% 91%, 50% 70%, 18% 91%, 31% 57%, 0% 35%, 39% 35%);
+    /* 星を作成するための１０の座標 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
