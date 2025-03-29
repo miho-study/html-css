@@ -1,24 +1,37 @@
-.float{
-    max-width: 760px;
-    width: 100%;
-    margin: 60px auto;
+.information {
+    padding: 20px 45px;
+    margin-top: 50px;
+    text-align: center;
+    background: rgba(47, 255, 95, 0.897);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    border-radius: 10px;
+    color: #fff;
 }
-h1{
-    font-size: 24px;
-    margin-bottom: 20px;
+
+
+.information::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 5px;
+    background: url(../img/mail.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    transform: translate(0, -50%);
 }
-.float_img{
-    width: 400px;
-    float: right;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-/* レスポンシブル対応 */
-.float_img img {
-    max-width: 100%;
-    /* 親要素の幅を超えないように */
-    height: auto;
-    /* 縦横比を保持 */
-    display: block;
-    /* 余計なスペースを防ぐ */
+
+.information::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 5px;
+    background: url(../img/download__icon.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    transform: translate(0, -50%);
 }

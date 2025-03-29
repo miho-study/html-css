@@ -6,7 +6,7 @@
 
 .card {
     width: 20%;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 10px #00000033;
     margin: 30px;
 }
 
@@ -21,7 +21,7 @@
 
 .card__content-ttl {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     font-weight: 400;
 }
 
@@ -32,7 +32,7 @@
     display: inline-block;
     /* 要素の文字数に応じて幅が変更されるためにinline-blockを指定 */
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
 }
 .card__content-cat-landscape {
     padding: 5px 10px;
@@ -46,7 +46,7 @@
 .card__content-cat-sightseeing {
     padding: 5px 10px;
     background: orange;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: inline-block;
     /* 要素の文字数に応じて幅が変更されるためにinline-blockを指定 */
     color: #fff;
@@ -66,31 +66,96 @@
     font-size: 14px;
     text-align: right;
     /* 親要素にtext-alignを適用すると子要素のinline-block要素に適応される */
+    margin-bottom: 5px;
 }
 
 .card__content-tag-item-food {
     display: inline-block;
     /* 横並びにするためにinline-blockを指定 */
     color: #008888;
+    margin-bottom: 5px;
 }
 .card__content-tag-item-landscape {
     display: inline-block;
     /* 横並びにするためにinline-blockを指定 */
     color: blue;
+    margin-bottom: 5px;
 }
 .card__content-tag-item-sightseeing {
     display: inline-block;
     /* 横並びにするためにinline-blockを指定 */
     color: orange;
+    margin-bottom: 5px;
 }
 .card__content-tag-item-hobby {
     display: inline-block;
     /* 横並びにするためにinline-blockを指定 */
     color: palevioletred;
+    margin-bottom: 5px;
 }
 .card__content-tag-item--last {
     display: inline-block;
     /* 横並びにするためにinline-blockを指定 */
     margin-left: 20px;
     color: #888888;
+}
+.card-1{
+    width: 24%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-2{
+    width: 20.5%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-3{
+    width: 22%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-4 {
+    width: 24%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-5 {
+    width: 25%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-6 {
+    width: 24%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-7 {
+    width: 22.5%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-8 {
+    width: 25%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-9 {
+    width: 26%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-10 {
+    width: 25%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-11 {
+    width: 22%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
+}
+.card-12 {
+    width: 24%;
+    box-shadow: 0px 3px 10px #00000033;
+    margin: 30px;
 }

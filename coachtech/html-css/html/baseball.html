@@ -6,6 +6,7 @@
     <title>Baseball</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/baseball.css" />
+    <script src="baseball.js"></script>
 </head>
 <body>
     <table border="1">
@@ -64,81 +65,124 @@
     <div class="table-container">
     <table border="1">
         <tr>
-            <th colspan="3">オリックス・バファローズ</th>
-            <th colspan="3">横浜DeNAベイスターズ</th>
+            <th colspan="4">オリックス・バファローズ</th>
+            <th colspan="4">横浜DeNAベイスターズ</th>
+        </tr>
+        <tr>
+            <td>打順</td>
+            <td>守</td>
+            <td>選手</td>
+            <td>打率</td>
+            <td>打順</td>
+            <td>守</td>
+            <td>選手</td>
+            <td>打率</td>
         </tr>
         <tr>
             <td>1</td>
             <td>右</td>
             <td>杉本 裕太郎</td>
+            <td>.233</td>
             <td>1</td>
             <td>中</td>
             <td>蝦名 達夫</td>
+            <td>.256</td>
         </tr>
         　　<tr>
             <td>2</td>
             <td>三</td>
             <td>宗 佑磨</td>
+            <td>.235</td>
             <td>2</td>
             <td>右</td>
             <td>梶原 昴希</td>
+            <td>.292</td>
         </tr>
         <tr>
             <td>3</td>
             <td>二</td>
             <td>太田 椋</td>
+            <td>.288</td>
             <td>3</td>
             <td>左</td>
             <td>佐野 恵太</td>
+            <td>.273</td>
         </tr>
         <tr>
             <td>4</td>
             <td>左</td>
             <td>西川 龍馬</td>
+            <td>.258</td>
             <td>4</td>
             <td>一</td>
             <td>T.オースティン</td>
+            <td>.316</td>
         </tr>
         <tr>
             <td>5</td>
             <td>遊</td>
             <td>紅林 弘太郎</td>
+            <td>.247</td>
             <td>5</td>
             <td>三</td>
             <td>宮崎 敏郎</td>
+            <td>.283</td>
         </tr>
         <tr>
             <td>6</td>
             <td>一</td>
             <td>頓宮 裕真</td>
+            <td>.197</td>
             <td>6</td>
             <td>捕</td>
             <td>山本 祐大</td>
+            <td>.291</td>
         </tr>
         <tr>
             <td>7</td>
             <td>捕</td>
             <td>若月 健矢</td>
+            <td>.201</td>
             <td>7</td>
             <td>二</td>
             <td>大和</td>
+            <td>.247</td>
         </tr>
         <tr>
             <td>8</td>
             <td>中</td>
             <td>福田 周平</td>
+            <td>.232</td>
             <td>8</td>
             <td>遊</td>
             <td>森 敬斗</td>
+            <td>.251</td>
         </tr>
         <tr>
             <td>9</td>
             <td>投</td>
             <td>田嶋 大樹</td>
+            <td>.000</td>
             <td>9</td>
             <td>投</td>
             <td>A.ジャクソン</td>
+            <td>.098</td>
         </tr>
     </table>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let tableCells = document.querySelectorAll("td");
+
+            tableCells.forEach(cell => {
+                let value = parseFloat(cell.textContent);
+
+                // 数値が0.250以上なら背景色を変更
+                if (!isNaN(value) && value >= 0.275 && value <= 0.999) {
+                    cell.style.backgroundColor = "yellow";
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
