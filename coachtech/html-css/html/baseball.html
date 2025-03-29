@@ -169,14 +169,14 @@
             <td>.098</td>
         </tr>
     </table>
-     <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             let tableCells = document.querySelectorAll("td");
 
             tableCells.forEach(cell => {
                 let value = parseFloat(cell.textContent);
 
-                // 数値が0.250以上なら背景色を変更
+                // 数値が0.275以上なら背景色を変更
                 if (!isNaN(value) && value >= 0.275 && value <= 0.999) {
                     cell.style.backgroundColor = "yellow";
                 }
