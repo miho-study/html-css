@@ -1,37 +1,60 @@
 *{
+    padding-top: 60px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 nav{
     position: fixed;
-    background-color: aquamarine;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 8vh;
-    padding-right: 30px;
-    padding-left: 30px;
-    z-index: 1000;
-    /* position: fixed; */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        /* 高さを固定 */
+        background-color: aquamarine;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
 }
 .logo{
     color: white;
     font-size: 30px;
+    flex: 1;
+        display: flex;
+        align-items: center;
+        /* 高さ中央に配置 */
+        text-align: left;
+}
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .nav-links li {
     list-style: none;
     padding-bottom: 10px;
     padding-left: 10px;
+    list-style: none;
+        margin-left: 20px;
 }
-/* .nav-links ul{
+.nav-links ul{
     text-decoration: none;
     color: white;
 
-} */
+}
 .nav-links a {
     text-decoration: none;
     color: inherit;
+    text-decoration: none;
+        color: inherit;
+}
+.logo h4 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
 }
 .h4 {
     position: fixed;
@@ -47,7 +70,11 @@ nav{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* 影を追加 */
 }
-
+.title {
+    display: inline-block;
+    margin-top: 60px;
+    margin-left: 10px;
+}
 .container {
     width: 100%;
     height: 600px;
@@ -59,7 +86,7 @@ nav{
 }
 .side {
     width: 20%;
-    background-color: pink;
+    background-color: aquamarine;
     color: white;
     position: sticky;
     top: 80px;

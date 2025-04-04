@@ -1,37 +1,72 @@
-.information {
-    padding: 20px 45px;
-    margin-top: 50px;
-    text-align: center;
-    background: rgba(47, 255, 95, 0.897);
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+.form {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.form-item {
+    border-top: 1px solid #ddd;
+    padding: 24px 0;
+    width: 100%;
+    display: flex;
+    /* lavelとinputを横並びにする */
+    align-items: center;
+}
+
+.form-item:nth-child(5) {
+    border-bottom: 1px solid #ddd;
+}
+
+.form-item-label {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-item-label-required {
+    border-radius: 6px;
+    margin-right: 8px;
+    padding: 8px 0;
+    width: 48px;
     display: inline-block;
-    border-radius: 10px;
+    text-align: center;
+    background: #5bc8ac;
     color: #fff;
+    font-size: 14px;
 }
 
-
-.information::before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 5px;
-    background: url(../img/mail.svg);
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    transform: translate(0, -50%);
+.form-item-input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding: 0 10px;
+    height: 48px;
+    width: 100%;
+    background: #eaedf2;
+    font-size: 18px;
 }
 
-.information::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    right: 5px;
-    background: url(../img/download__icon.svg);
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-    transform: translate(0, -50%) rotate(-90deg);
+.form-item-textarea {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding: 0 10px;
+    height: 200px;
+    width: 100%;
+    background: #eaedf2;
+    font-size: 18px;
+}
+
+.form-btn {
+    border-radius: 6px;
+    margin: 32px auto 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 280px;
+    display: block;
+    background: #5bc8ac;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
 }
