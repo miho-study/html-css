@@ -6,7 +6,7 @@
 }
 nav{
     position: fixed;
-        top: 0;
+    top: 0;
         left: 0;
         width: 100%;
         height: 60px;
@@ -38,7 +38,7 @@ nav{
     padding-bottom: 10px;
     padding-left: 10px;
     list-style: none;
-        margin-left: 20px;
+    margin-left: 20px;
 }
 .nav-links ul{
     text-decoration: none;
@@ -49,7 +49,7 @@ nav{
     text-decoration: none;
     color: inherit;
     text-decoration: none;
-        color: inherit;
+    color: inherit;
 }
 .logo h4 {
     margin: 0;
@@ -81,7 +81,7 @@ nav{
     display: flex;
     flex-direction: row-reverse;
     overflow: visible;
-    margin-top: 80px;
+    margin-top: 10px;
         /* 固定したh1分の余白を確保 */
 }
 .side {

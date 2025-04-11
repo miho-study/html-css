@@ -33,3 +33,91 @@ td {
     background-color: yellow;
     /* ハイライト色 */
 }
+.tooltip-bay {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip-bay::after {
+    content: attr(data-tooltip);
+    /* data-toooltipの中身を見せる */
+    position: absolute;
+    top: 120%;
+    /* 吹き出しをセルの下へ持ってくる */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: blue;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    /* 最初は非表示にする */
+    pointer-events: none;
+    /* クリックされたくない要素に入れる */
+    transition: opacity 0.2s;
+    /* 要素が完全に表示されるまでにかかる時間 */
+    z-index: 10;
+}
+
+.tooltip-bay::before {
+    content: "";
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: blue;
+    /* 下向きの三角形を作成 */
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+.tooltip-bay:hover::after,
+.tooltip-bay:hover::before {
+    opacity: 0.7;
+    /* 透明度 */
+}
+
+.tooltip-bs {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip-bs::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+.tooltip-bs::before {
+    content: "";
+    position: absolute;
+    bottom: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+.tooltip-bs:hover::after,
+.tooltip-bs:hover::before {
+    opacity: 0.9;
+}

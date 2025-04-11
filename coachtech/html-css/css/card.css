@@ -20,17 +20,17 @@
     box-shadow: 0px 3px 10px #00000033;
     margin: 30px; */
     background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        padding: 16px;
-        width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 100%;
         /* これ重要！カード内で余計な幅制限させない */
-        box-sizing: border-box;
+    box-sizing: border-box;
         /* 指定した高さ幅に納めることができる */
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;/* フッターを下に配置 */
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;/* フッターを下に配置 */
 }
 
 .card__img img {
@@ -113,9 +113,21 @@
 
 .footer-card-last li {
     display: inline-block;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     color: #888888;
 }
+
+.hashtag {
+    text-decoration: none;
+    color: inherit;
+    /* display: inline; */
+    margin-right: 20px;
+}
+
+.hashtag:hover {
+    text-decoration: underline;
+}
+
 
 .card__content-tag-item-food {
     display: inline-block;
@@ -159,4 +171,10 @@
         flex: 1 1 100%;
         max-width: 100%;
     }
+}
+.footer-card,
+.footer-card ul,
+.footer-card li {
+    margin: 0;
+    padding: 0;
 }
