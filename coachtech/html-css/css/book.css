@@ -76,25 +76,86 @@ nav{
     margin-left: 10px;
 }
 .container {
-    width: 100%;
-    height: 600px;
     display: flex;
+    width: 100%;
     flex-direction: row-reverse;
     overflow: visible;
-    margin-top: 10px;
-        /* 固定したh1分の余白を確保 */
+    /* align-items: flex-start; */
+        /* 高さを詰める */
 }
 .side {
+    position: fixed;
     width: 20%;
     background-color: aquamarine;
     color: white;
     position: sticky;
     top: 80px;
+    overflow-y: auto;
+        padding: 10px;
+        z-index: 999;
+        height: 720px;
 }
 .flex{
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-right: 100px;
+    margin-right: 20%;
+    display: flex;
+    width: 80%;
+}
+/* .side {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 20%;
+    height: 600px;
+    background-color: aquamarine;
+    color: white;
+    overflow-y: auto;
+    padding: 10px;
+    z-index: 999;
+}
+
+.flex {
+    width: 80%;
+    margin-right: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container {
+    display: flex;
+    margin-top: 10px;
+    height: 100px;
+} */
+.vertical-list {
+    display: flex;
+    flex-direction: column;
+    /* ←縦に並べる */
+    align-items: flex-start;
+        /* ← 子要素を左寄せにする */
+    padding: 10px;
+}
+
+.vertical-list li {
+    margin-bottom: 5px;
+    /* 各項目の間隔 */
+    list-style: none;
+    width: 100%;
+}
+
+.vertical-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+        text-align: left;
+        /* ← テキスト自体も左寄せ */
+        width: 100%;
+        /* ← 横幅いっぱいにして左寄せが効きやすく */
+}
+.vertical-list a:hover {
+    color: yellow;
+    text-decoration: underline;
 }
 .book{
     display: flex;
