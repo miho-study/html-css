@@ -168,11 +168,24 @@ nav{
 .book_ttl{
     font-size: 20px;
     padding-left: 10px;
-    padding-top: 175px;
+    padding-top: 10px;
     }
 .book_ttl a{
     text-decoration: none;
     color: inherit;
+}
+.book_price{
+    padding-top: 20px;
+    padding-left: 500px;
+    color: red;
+    font-weight: bold;
+}
+.book_author{
+    font-size: 15px;
+    padding-top: 50px;
+}
+.book_date{
+    font-size: 15px;
 }
 .rank{
     font-size: 20px;
