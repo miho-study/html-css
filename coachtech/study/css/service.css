@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+/*-------------------------------------------
+サービス内容
+-------------------------------------------*/
+.detail {
+  background-color: #ffed58;
+  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+  padding: 100px 0;
+  margin-bottom: 80px;
+}
+.detail .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail .item .img {
+  width: 55%;
+  margin-right: 5%;
+}
+.detail .item .img img {
+  width: 100%;
+}
+.detail .item .text {
+  width: 40%;
+}
+.detail .item .text .title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.detail .item .text .description {
+  line-height: 1.8;
+}
+
+/*-------------------------------------------
+ご利用の流れ
+-------------------------------------------*/
+.flow {
+  margin-bottom: 100px;
+}
+.flow .item {
+  display: flex;
+  margin-bottom: 50px;
+}
+.flow .item .step {
+  width: 160px;
+  height: 140px;
+  background-color: #ffed58;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  font-weight: 700;
+  flex-shrink: 0;
+  padding-top: 20px;
+  margin-right: 7%;
+  text-align: center;
+}
+.flow .item .step .title {
+  display: block;
+  font-size: 18px;
+}
+.flow .item .step .no {
+  display: block;
+  font-size: 56px;
+}
+.flow .item .text dt {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.flow .item .text dd {
+  line-height: 1.8;
+}
+.flow .item .text a {
+  text-decoration: underline;
+}
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /*-------------------------------------------
+  サービス内容
+  -------------------------------------------*/
+  .detail {
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+    padding: 80px 0;
+    margin-bottom: 40px;
+  }
+  .detail .item {
+    flex-direction: column;
+  }
+  .detail .item .img {
+    width: 100%;
+    margin: 0 0 40px;
+  }
+  .detail .item .text {
+    width: 100%;
+  }
+  .detail .item .text .title {
+    text-align: center;
+  }
+
+  /*-------------------------------------------
+  ご利用の流れ
+  -------------------------------------------*/
+  .flow {
+    margin-bottom: 40px;
+  }
+  .flow .item {
+    margin-bottom: 30px;
+  }
+  .flow .item .step {
+    width: 80px;
+    height: 80px;
+    padding-top: 10px;
+    margin-right: 20px;
+  }
+  .flow .item .step .title {
+    font-size: 14px;
+  }
+  .flow .item .step .no {
+    font-size: 32px;
+  }
+  .flow .item .text dt {
+    font-size: 18px;
+  }
+  .flow .item .text dd {
+    font-size: 14px;
+  }
+}

@@ -119,13 +119,108 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-    .navbar{
-        padding: 0.5rem 1rem;
+
+    .logo { 
+        max-width: 150px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        }
+    .mainvisual img{
+        height: 250px;
+            /* 好きな高さに調整 */
+        object-fit: cover;
+            /* はみ出た部分を隠してトリミング風に見せる */
+        width: 100%;
+            /* 横幅いっぱいに */
     }
-    .logo{
-        max-width: 120px;
-        font-size: 1rem;
+    /* ハンバーガーメニュー */
+     main{
+        padding-top: 60px;
+     }
+     header{
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+     }
+     header .hamburger{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        position: fixed;
+        top: 5px;
+        right: 10px;
+        z-index: 30;
+     }
+     header .hamburger span{
+        width: 30px;
+        height: 3px;
+        background-color: #00AEEF;
+        display: inline-block;
+        position: absolute;
+        left: 10px;
+        transition: all 0.4s;
+     }
+     header .hamburger span:nth-of-type(1){
+        top:16px
+     }
+    span:nth-of-type(2) {
+        top: 25px
+         }
+    span:nth-of-type(3) {
+        top: 34px
+        }
+    header .navi{
+        width: 80%;
+        height: 100vh;
+        background-color: #AFDFE4;
+        position: fixed;
+        right: -80%;
+        z-index: 20;
+        transition: all 0.6s;
     }
+    header .navi .nav-links{
+        display: flex;
+        justify-content: center;
+            /* 中央寄せ */
+            align-items: center;
+            /* 中央寄せ */
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        padding-top: 270px;
+        overflow: auto;
+        /* メニュー内でスクロールが可能 */
+    }
+    header .navi .nav-links a {
+        color: #00AEEF;
+        font-size: 1.2rem;
+        text-align: center;
+        display: block;
+        padding: 10px 0;
+        line-height: 0.1;
+    }
+    header .navi .nav-links li{
+        padding: 10px 0;
+        margin-left: 0;
+        margin: 0.5rem 0;
+    }
+    header .navi.active{
+        right: 0;
+    }
+    header .hamburger.active span:nth-of-type(1){
+        top: 24px;
+        transform: rotate(-45deg);
+    }
+    header .hamburger.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    header .hamburger.active span:nth-of-type(3) {
+        top: 24px;
+        transform: rotate(45deg);
+}
 }
 
 /* about.html */
@@ -134,11 +229,31 @@ footer {
     align-items: center;
 }
 .profile img{
-    width: 80%;
-    height: 100%;
+    width: 70%;
+    height: 65%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-.section-title{
+.name{
+    line-height: 3;
+}
+.birthplace{
+    line-height: 3;
+}
+.comment{
+    line-height: 3;
+}
+.name span{
+    font-weight: bold;
+}
+.birthplace span{
+    font-weight: bold;
+}
+.comment span{
+    font-weight: bold;
+}
+.profile .section-title{
     margin-bottom: 2rem;
 }
 
@@ -147,7 +262,114 @@ footer {
     font-size: 2.5rem;
 }
 
-.section.title .ja{
+.section-title .ja{
     display: block;
     font-size: 1rem;
+}
+
+/* 好きな都道府県 */
+.favorite-prefecture .section-title{
+    margin-top: 120px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 2rem;
+}
+.favorite-prefecture .item{
+    display:flex;
+    justify-content:space-between;
+    list-style: none;
+    flex-wrap: wrap;
+        /* 画面が狭い時に折り返し可能に */
+        gap: 2rem;
+        /* 要素間の余白 */
+        padding: 0 1rem;
+}
+.favorite-prefecture .rank{
+    text-align: center;
+    font-size: 20px;
+        color: white;
+        font-weight: bold;
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        margin-bottom: 0.5rem;
+}
+.favorite-prefecture .item li{
+    flex: 1 1 calc(33.333% - 2rem);
+        /* 横3つで隙間込みで均等割り */
+        max-width: calc(33.333% - 2rem);
+        background-color: #fff;
+        border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.favorite-prefecture .item li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+/* 1位：金 */
+.favorite-prefecture .item li:nth-child(2) .rank {
+    background-color: #FFD700;
+    /* Gold */
+    color: #4a3900;
+}
+
+/* 2位：銀 */
+.favorite-prefecture .item li:nth-child(1) .rank {
+    background-color: #C0C0C0;
+    /* Silver */
+    color: #333;
+}
+
+/* 3位：銅 */
+.favorite-prefecture .item li:nth-child(3) .rank {
+    background-color: #CD7F32;
+    /* Bronze */
+    color: #333;
+}
+.favorite-prefecture .item li img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+.favorite-prefecture .title{
+    font-weight: bold;
+}
+
+/* 旅の持ち物 */
+.belongings .section-title{
+    margin-top: 120px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 2rem;
+}
+.belongings .belongings-item{
+    display: flex;
+}
+belongings-item:nth-of-type(1) {
+    margin-bottom: 50px;
+}
+.belongings .img{
+    width: 50%;
+}
+.belongings .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.belongings .belongings-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.belongings .text:nth-child(2){
+    margin-right: 20px;
+}
+.belongings .text:nth-child(1) {
+    margin-left: 20px;
 }

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/*-------------------------------------------
+料金
+-------------------------------------------*/
+.plan-table {
+  overflow-x: auto;
+  padding: 0 20px;
+  margin-bottom: 80px;
+}
+.plan-table .table {
+  width: 900px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+.plan-table .table th,
+.plan-table .table td {
+  border: solid 1px #707070;
+  padding: 20px;
+}
+.plan-table .table thead th {
+  background-color: #fafafa;
+  font-weight: 500;
+}
+.plan-table .table thead th:first-child {
+  width: 300px;
+  background-color: #fff;
+  border-left: none;
+  border-top: none;
+}
+.plan-table .table thead th:nth-child(n+2) {
+  width: 200px;
+}
+.plan-table .table tbody th {
+  background-color: #fafafa;
+  font-weight: 500;
+  text-align: left;
+}
+.plan-table .table tbody td {
+  font-size: 18px;
+  text-align: center;
+}
+.plan-table .table  tbody td .title {
+  display: block;
+  font-size: 14px;
+}
+.plan-table .table  tbody td .price {
+  font-size: 24px;
+  font-weight: 500;
+}
+.plan-table .table  tbody td .tax {
+  font-size: 12px;
+}
+.plan-table .table  tbody td .note {
+  font-size: 12px;
+}
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /*-------------------------------------------
+  料金
+  -------------------------------------------*/
+  .plan-table {
+    margin-bottom: 40px;
+  }
+  .plan-table .table {
+    width: 600px;
+  }
+  .plan-table .table th,
+  .plan-table .table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .plan-table .table thead th:first-child {
+    width: 150px;
+  }
+  .plan-table .table thead th:nth-child(n+2) {
+    width: 150px;
+  }
+  .plan-table .table tbody td {
+    font-size: 14px;
+  }
+  .plan-table .table tbody td .price {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>  
+    <meta charset="utf-8">
+    <title>お問い合わせ | STUDY</title>
+    <meta name="description" content="当サービスに関するお問い合わせは、お問い合わせフォームよりお願いいたします。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/common/favicon.ico">
+    <link rel="apple-touch-icon" href="img/common/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/common/logo.svg" alt="STUDY">
+        </a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="navi">
+        <ul class="menu">
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="service.html">サービス</a></li>
+          <li><a href="price.html">料金</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <div class="page-header">
+        <h1 class="page-title">
+          <span class="ja">お問い合わせ</span>
+          <span class="en">CONTACT</span>
+        </h1>
+      </div>
+
+      <div class="page-head-text wrapper">
+        <p class="title">まずはお気軽に<br class="sp">お問い合わせください。</p>
+        <p class="text">お問い合わせは下記のフォームからお願いいたします。<br>3営業日以内にご返信いたします。</p>
+      </div>
+
+      <section class="contact-form wrapper">
+        <h2 class="section-title">お問い合わせフォーム</h2>
+        <form action="" method="post">
+          <dl>
+            <dt>種類<span class="require">*</span></dt>
+            <dd class="radio-group">
+              <div class="item-group">
+                <input type="radio" id="service" name="kind" value="サービスに関するお問い合わせ">
+                <label for="service">サービスに関するお問い合わせ</label>
+              </div>
+              <div class="item-group">
+                <input type="radio" id="interview" name="kind" value="取材に関するお問い合わせ">
+                <label for="interview">取材に関するお問い合わせ</label>
+              </div>
+              <div class="item-group">
+                <input type="radio" id="document" name="kind" value="資料請求">
+                <label for="document">資料請求</label>
+              </div>
+              <div class="item-group">
+                <input type="radio" id="other" name="kind" value="その他">
+                <label for="other">その他</label>
+              </div>
+            </dd>
+            <dt><label for="company">会社名</label></dt>
+            <dd><input id="company" type="text" name="company"></dd>
+            <dt><label for="name">お名前</label><span class="require">*</span></dt>
+            <dd><input id="name" type="text" name="name"></dd>
+            <dt><label for="email">メールアドレス</label><span class="require">*</span></dt>
+            <dd><input id="email" type="email" name="email"></dd>
+            <dt><label for="message">詳細内容</label><span class="require">*</span></dt>
+            <dd><textarea id="message" name="message"></textarea></dd>
+          </dl>
+          <div class="btn"><input type="submit" value="送信する"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="inner wrapper">
+        <div class="logo">
+          <img src="img/common/logo.svg" alt="STUDY">
+        </div>
+        <ul class="menu">
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="service.html">サービス</a></li>
+          <li><a href="price.html">料金</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <p class="copyright">Copyright © study. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

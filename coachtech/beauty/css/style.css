@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+body {
+  background-color: #fdf8f8;
+  color: #333;
+  font-family: 'YuGothic', 'Yu Gothic', sans-serif;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  /* 下に揃える */
+}
+li {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+.wrapper {
+  max-width: 1040px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/*-------------------------------------------
+Header
+-------------------------------------------*/
+#header .logo {
+  width: 100%;
+  max-width: 120px;
+  line-height: 0;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 50;
+}
+#header .logo a {
+  display: block;
+}
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+.mainvisual img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+/*-------------------------------------------
+Concept
+-------------------------------------------*/
+.concept {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  position: relative;
+}
+.concept .img {
+  max-width: 720px;
+}
+.concept .text {
+  max-width: 600px;
+  background-color: rgba(253, 248, 248, 0.8);
+  padding: 40px;
+  position: absolute;
+  top: 325px;
+  right: 0;
+}
+.concept .text .section-title {
+  font-family: 'YuMincho', 'Yu Mincho', serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.concept .text .description {
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/*-------------------------------------------
+New Products
+-------------------------------------------*/
+.new-products {
+  background-color: #f4eaea;
+  padding: 130px 0;
+}
+.new-products .section-title {
+  font-family: 'YuMincho', 'Yu Mincho', serif;
+  font-size: 80px;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+.new-products .img-group {
+  height: 890px;
+  position: relative;
+}
+.new-products .img-group .img1 {
+  max-width: 350px;
+  position: absolute;
+  top: 0;
+  left: 42%;
+  z-index: 30;
+}
+.new-products .img-group .img2 {
+  max-width: 400px;
+  position: absolute;
+  top: 250px;
+  left: 8%;
+  z-index: 20;
+}
+.new-products .img-group .img3 {
+  max-width: 480px;
+  position: absolute;
+  top: 570px;
+  left: 40%;
+  z-index: 10;
+}
+.new-products .img-group .circle {
+  width: 90px;
+  height: 90px;
+  background-color: #333;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  position: absolute;
+  top: -45px;
+  right: -13%;
+  z-index: 40;
+}
+
+/*-------------------------------------------
+New Type
+-------------------------------------------*/
+.new-type {
+  display: flex;
+  align-items: center;
+  padding: 130px 0;
+}
+.new-type .text {
+  width: 50%;
+}
+.new-type .text .text-inner {
+  max-width: 520px;
+  padding: 0 60px 0 20px;
+  margin-left: auto;
+}
+.new-type .text .section-title {
+  font-family: 'YuMincho', 'Yu Mincho', serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.new-type .text .description {
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: justify;
+}
+.new-type .img {
+  width: 50%;
+}
+.new-type .img img {
+  height: 480px;
+  object-fit: cover;
+  object-position: left;
+}
+
+/*-------------------------------------------
+Online Store
+-------------------------------------------*/
+.online-store {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/bg.jpg);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  background-position: center top;
+  background-size: cover;
+}
+.online-store .box {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px 0;
+  text-align: center;
+}
+.online-store .box .title {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.online-store .box .btn {
+  background-color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  padding: 10px 30px;
+  position: relative;
+}
+.online-store .box .btn::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #333;
+  position: absolute;
+  top: 20px;
+  right: -20px;
+}
+
+/*-------------------------------------------
+Footer
+-------------------------------------------*/
+#footer {
+  background-color: #666;
+  padding: 30px 0;
+}
+#footer .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#footer .logo {
+  max-width: 130px;
+}
+#footer .copyright {
+  color: #fff;
+  font-size: 12px;
+}
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /*-------------------------------------------
+  Header
+  -------------------------------------------*/
+  #header .logo {
+    max-width: 85px;
+    top: 20px;
+    left: 20px;
+  }
+
+  /*-------------------------------------------
+  Mainvisual
+  -------------------------------------------*/
+  .mainvisual img {
+    height: 480px;
+  }
+
+  /*-------------------------------------------
+  Concept
+  -------------------------------------------*/
+  .concept {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: static;
+    /* relativeのリセット */
+  }
+  .concept .img {
+    margin-bottom: 30px;
+  }
+  .concept .text {
+    background-color: transparent;
+    padding: 0;
+    position: static;
+  }
+  .concept .text .section-title {
+    font-size: 24px;
+  }
+
+  /*-------------------------------------------
+  New Products
+  -------------------------------------------*/
+  .new-products {
+    padding: 40px 0;
+  }
+  .new-products .section-title {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .new-products .img-group {
+    height: auto;
+    position: static;
+  }
+  .new-products .img-group .img1 {
+    margin: 0 auto 20px;
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+  .new-products .img-group .img2 {
+    margin: 0 auto 20px;
+    position: static;
+  }
+  .new-products .img-group .img3 {
+    margin: 0 auto;
+    position: static;
+  }
+  .new-products .img-group .circle {
+    width: 70px;
+    height: 70px;
+    font-size: 16px;
+    top: -13px;
+    right: -13px;
+  }
+
+  /*-------------------------------------------
+  New Type
+  -------------------------------------------*/
+  .new-type {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .new-type .text {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .new-type .text .text-inner {
+    max-width: 100%;
+    padding: 0;
+  }
+  .new-type .text .section-title {
+    font-size: 24px;
+  }
+  .new-type .img {
+    width: 100%;
+  }
+  .new-type .img img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  /*-------------------------------------------
+  Online Store
+  -------------------------------------------*/
+  .online-store {
+    height: auto;
+    padding: 20px;
+  }
+  .online-store .box .title {
+    font-size: 24px;
+  }
+
+  /*-------------------------------------------
+  Footer
+  -------------------------------------------*/
+  #footer {
+    padding: 15px 0;
+  }
+  #footer .logo {
+    max-width: 80px;
+  }
+}

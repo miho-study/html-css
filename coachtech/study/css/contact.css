@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/*-------------------------------------------
+お問い合わせ
+-------------------------------------------*/
+.contact-form {
+  margin-bottom: 80px;
+}
+.contact-form dt {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.contact-form dt .require {
+  color: #e52d27;
+  margin-left: 5px;
+}
+.contact-form dd {
+  margin-bottom: 40px;
+}
+.contact-form dd input[type="text"],
+.contact-form dd input[type="email"] {
+  width: 100%;
+  border: solid 1px #ccc;
+  padding: 15px 10px;
+}
+.contact-form dd textarea {
+  width: 100%;
+  height: 200px;
+  border: solid 1px #ccc;
+  padding: 15px 10px;
+}
+.contact-form .radio-group {
+  display: flex;
+  align-items: center;
+}
+.contact-form .radio-group .item-group {
+  margin-right: 40px;
+}
+.contact-form .btn {
+  text-align: center;
+}
+.contact-form .btn input {
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 15px 50px;
+}
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /*-------------------------------------------
+  お問い合わせ
+  -------------------------------------------*/
+  .contact-form {
+    margin-bottom: 40px;
+  }
+  .contact-form dd {
+    margin-bottom: 25px;
+  }
+  .contact-form .radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 10px;
+  }
+  .contact-form .radio-group .item-group {
+    margin: 0 0 15px;
+  }
+}
