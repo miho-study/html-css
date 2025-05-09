@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Travel Dialy</title>
+    <meta name="description" content="趣味の旅行を紹介するプロフィールサイトです。これまでにいった場所の写真を掲載していますので、よろしければご覧になってみてください">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTMfnjQDARlHnRcm67PenpYQcU5-ToNHE"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <h1 class="logo">My Travel Diary</h1>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="navi">
+                    <ul class="nav-links">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="about.html">プロフィール</a></li>
+                        <li><a href="trips.html">旅の記録</a></li>
+                        <li><a href="recommend.html">おすすめ</a></li>
+                        <li><a href="map.html">マップ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="hero">
+                <h2>訪れた場所マップ</h2>
+                <p>クリックで写真＆紹介文を表示🌏</p>
+            </section>
+            
+            <div id="map"></div>
+        </main>
+
+        <footer>
+            <p>&copy; My Travel Diary</p>
+        </footer>
+    </div>
+</body>

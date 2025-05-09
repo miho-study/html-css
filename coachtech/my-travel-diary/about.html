@@ -8,19 +8,28 @@
     <meta name="description" content="趣味の旅行を紹介するプロフィールサイトです。これまでにいった場所の写真を掲載していますので、よろしければご覧になってみてください">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="trips.html">
-    <link rel="stylesheet" href="index.html">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <nav class="navbar">
                 <h1 class="logo">My Travel Diary</h1>
-                <ul class="nav-links">
-                    <li><a href="index.html">ホーム</a></li>
-                    <li><a href="trips.html">旅の記録</a></li>
-                    <li><a href="about.html">プロフィール</a></li>
-                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="navi">
+                    <ul class="nav-links">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="about.html">プロフィール</a></li>
+                        <li><a href="trips.html">旅の記録</a></li>
+                        <li><a href="recommend.html">おすすめ</a></li>
+                        <li><a href="map.html">マップ</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
 
@@ -36,7 +45,7 @@
                     </h2>
                     <p class="name"><span>名前</span>    MIHO</p>
                     <p class="birthplace"><span>出身地</span>     山口県</p>
-                    <p class="comment"><span>一言コメント</span><br>まだ行ったことのない場所が多いので色々な県に行きたいです！</p>
+                    <p class="comment"><span>一言コメント</span><br>まだ行ったことのない場所が多いので<span class="sp-br"></span>色々な県に行きたいです！</p>
                 </div>
             </section>
 
@@ -44,20 +53,20 @@
                 <h2 class="section-title">好きな都道府県　Best3</h2>
                 <ul class="item">
                     <li>
-                        <p class="rank">2位</p>
-                        <div class="img">
-                            <img src="images/hyougo.jpeg" alt="">
-                        </div>
-                        <p class="title">兵庫県</p>
-                        <p>異国情緒あふれる港町で、グルメと風景が調和するおしゃれな街</p>
-                    </li>
-                    <li>
                         <p class="rank">👑1位</p>
                         <div class="img">
                             <img src="images/osaka.jpeg" alt="">
                         </div>
                         <p class="title">大阪府</p>
-                        <p>オリックスの本拠地である京セラドームがあり、人情味あふれる街</p>
+                        <p>オリックスの本拠地である京セラドーム<span class="sp-br"></span>があり、人情味あふれる街</p>
+                    </li>
+                    <li>
+                        <p class="rank">2位</p>
+                        <div class="img">
+                            <img src="images/hyougo.jpeg" alt="">
+                        </div>
+                        <p class="title">兵庫県</p>
+                        <p>異国情緒あふれる港町で、<span class="sp-br"></span>グルメと風景が調和するおしゃれな街</p>
                     </li>
                     <li>
                         <p class="rank">3位</p>
@@ -65,9 +74,10 @@
                             <img src="images/isikawa.jpeg" alt="">
                         </div>
                         <p class="title">石川県</p>
-                        <p>歴史と伝統が息づく町並みに、美食と芸術が彩りを添える雅な街</p>
+                        <p>歴史と伝統が息づく町並みに、<span class="sp-br"></span>美食と芸術が彩りを添える雅な街</p>
                     </li>
                 </ul>
+
             </section>
 
             <section class="belongings">
@@ -77,20 +87,20 @@
                         <img src="images/earphones.jpeg" alt="">
                     </div>
                     <div class="text">
-                        <p class="belongings-title">ワイヤレスイヤホン</p>
-                        <p>長距離の新幹線や飛行機の移動の際にとても便利。バッテリー残量がディスプレイで表示されるので勝手に充電がなくなる心配なし<br> <a
+                        <h3 class="belongings-title">ワイヤレスイヤホン</h3>
+                        <p>長距離の新幹線や飛行機移動の際に<span class="sp-br"></span>とても便利。<br>バッテリー残量がディスプレイで<span class="sp-br"></span>表示されるので勝手に充電が<span class="sp-br"></span>なくなる心配なし<br> <a
                                 href="https://www.amazon.co.jp/bluetooth-%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-%E3%80%902024%E5%B9%B4%E6%9C%AB%E3%81%AE%E3%83%88%E3%83%83%E3%83%97%E3%83%A2%E3%83%87%E3%83%AB%E7%99%BB%E5%A0%B4-A1-%E3%82%BF%E3%83%83%E3%83%81%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB/dp/B0DK2QS7VT">購入はこちらから</a>
                         </p>
                     </div>
                 </div>
                 <div class="belongings-item">
                     <div class="text">
-                        <p class="belongings-title">モバイルバッテリー</p>
-                        <p>旅の移動時間や旅先で充電を心配する必要なし。飛行機内に持ち込み可能なのも嬉しい。<br> <a href="https://www.biccamera.com/bc/item/10312310/"></a>購入はこちらから</p>
+                        <h3 class="belongings-title">モバイルバッテリー</h3>
+                        <p>旅の移動時間や旅先で充電を<span class="sp-br"></span>心配する必要なし。<br>機内に持ち込み可能なのも嬉しい。<br> <a href="https://item.rakuten.co.jp/denkichiweb/4549550251020/?ultra_crid=4549550251020&scid=af_pc_etc&sc2id=af_113_0_10001868&icm_agid=&icm_acid=255-776-8501&iasid=wem_icbs_&ifd=57&gbraid=0AAAAADoVjphaQInglJ7S26bOIhGiVSFK3&gclid=Cj0KCQjw5ubABhDIARIsAHMighZnXFs5XGapQ4EXcigb7HctwcuTyvVZojbLrARk7S5z0EBYYSRAdCYaAnnIEALw_wcB&icm_cid=18634075866">購入はこちらから</a>
+                        </p>
                     </div>
                     <div class="img">
-                        <img src="images/battery.jpeg" alt="">
-                        <!-- 仮 -->
+                        <img src="images/battery2.png" alt="">
                     </div>
                 </div>
             </section>

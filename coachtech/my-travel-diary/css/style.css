@@ -118,110 +118,6 @@ footer {
     color: #999;
 }
 
-@media screen and (max-width: 767px) {
-
-    .logo { 
-        max-width: 150px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        }
-    .mainvisual img{
-        height: 250px;
-            /* 好きな高さに調整 */
-        object-fit: cover;
-            /* はみ出た部分を隠してトリミング風に見せる */
-        width: 100%;
-            /* 横幅いっぱいに */
-    }
-    /* ハンバーガーメニュー */
-     main{
-        padding-top: 60px;
-     }
-     header{
-        height: 60px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        width: 100%;
-     }
-     header .hamburger{
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
-        position: fixed;
-        top: 5px;
-        right: 10px;
-        z-index: 30;
-     }
-     header .hamburger span{
-        width: 30px;
-        height: 3px;
-        background-color: #00AEEF;
-        display: inline-block;
-        position: absolute;
-        left: 10px;
-        transition: all 0.4s;
-     }
-     header .hamburger span:nth-of-type(1){
-        top:16px
-     }
-    span:nth-of-type(2) {
-        top: 25px
-         }
-    span:nth-of-type(3) {
-        top: 34px
-        }
-    header .navi{
-        width: 80%;
-        height: 100vh;
-        background-color: #AFDFE4;
-        position: fixed;
-        right: -80%;
-        z-index: 20;
-        transition: all 0.6s;
-    }
-    header .navi .nav-links{
-        display: flex;
-        justify-content: center;
-            /* 中央寄せ */
-            align-items: center;
-            /* 中央寄せ */
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        padding-top: 270px;
-        overflow: auto;
-        /* メニュー内でスクロールが可能 */
-    }
-    header .navi .nav-links a {
-        color: #00AEEF;
-        font-size: 1.2rem;
-        text-align: center;
-        display: block;
-        padding: 10px 0;
-        line-height: 0.1;
-    }
-    header .navi .nav-links li{
-        padding: 10px 0;
-        margin-left: 0;
-        margin: 0.5rem 0;
-    }
-    header .navi.active{
-        right: 0;
-    }
-    header .hamburger.active span:nth-of-type(1){
-        top: 24px;
-        transform: rotate(-45deg);
-    }
-    header .hamburger.active span:nth-of-type(2) {
-        opacity: 0;
-    }
-    header .hamburger.active span:nth-of-type(3) {
-        top: 24px;
-        transform: rotate(45deg);
-}
-}
 
 /* about.html */
 .profile{
@@ -310,23 +206,20 @@ footer {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 /* 1位：金 */
-.favorite-prefecture .item li:nth-child(2) .rank {
+.favorite-prefecture .item li:nth-child(1) .rank {
     background-color: #FFD700;
-    /* Gold */
     color: #4a3900;
 }
 
 /* 2位：銀 */
-.favorite-prefecture .item li:nth-child(1) .rank {
+.favorite-prefecture .item li:nth-child(2) .rank {
     background-color: #C0C0C0;
-    /* Silver */
     color: #333;
 }
 
 /* 3位：銅 */
 .favorite-prefecture .item li:nth-child(3) .rank {
     background-color: #CD7F32;
-    /* Bronze */
     color: #333;
 }
 .favorite-prefecture .item li img {
@@ -350,26 +243,648 @@ footer {
 .belongings .belongings-item{
     display: flex;
 }
-belongings-item:nth-of-type(1) {
-    margin-bottom: 50px;
-}
 .belongings .img{
+    width: 70%;
+    /* margin: 0 20px 20px 0; */
+    margin-bottom: 70px;
+    border-radius: 30px;
+}
+.belongings-item:nth-of-type(2) .img {
     width: 50%;
 }
 .belongings .img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 .belongings .belongings-title{
     text-align: center;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+.belongings .text:nth-of-type(1) {
+    margin-right: 40px;
+}
+.belongings .text:nth-of-type(2) {
+    margin-left: 40px;
+}
+.belongings .text{
+    text-align: center;
+}
+.belongings .text p{
+    font-size: 20px;
+    line-height: 2;
+}
+.belongings .text a{
+    text-align: center;
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 30px;
+    position: relative;
+}
+.belongings .text a::after{
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 27px;
+    right: 18px;
+}
+
+/* trips.html */
+/* メイン部分 */
+main {
+     max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+.trip-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trip-list h1 {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* フィルターと並べ替えUI */
+.trip-list .filter-sort-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.trip-list .filter-sort-controls label {
+    display: flex;
+    flex-direction: column;
+    color: #555;
+}
+
+.trip-list .filter-sort-controls select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+/* カード */
+.trip-list .trip-cards {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.trip-list .trip-cards.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.trip-list .trip-cards .single-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.trip-list .trip-cards .single-column .trip-card{
+    width: 100%;
+    max-width: 700px;
+}
+.trip-list .trip-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(180, 180, 180, 0.2);
+    transition: transform 0.2s;
+    width: 100%;
+    max-width: none;
+    /* max-width: 700px; */
     margin-bottom: 20px;
 }
-.belongings .text:nth-child(2){
-    margin-right: 20px;
+
+.trip-list .trip-card:hover {
+    transform: scale(1.02);
 }
-.belongings .text:nth-child(1) {
-    margin-left: 20px;
+
+.trip-list .trip-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.trip-list .trip-info {
+    padding: 1rem;
+}
+
+.trip-list .trip-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.trip-list .trip-meta {
+    display: block;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 20px;
+}
+.trip-list .trip-card a {
+    text-decoration: none;
+    color: inherit;
+}
+/* recommend.html */
+.recommended-spots .section-title {
+    margin-top: 120px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.recommended-spots .spot-item {
+    display: flex;
+}
+
+.recommended-spots .img {
+    width: 60%;
+    /* margin: 0 20px 20px 0; */
+    margin-bottom: 70px;
+    margin-left: 30px;
+    border-radius: 30px;
+}
+
+
+.recommended-spots .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recommended-spots .spot-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+
+
+.recommended-spots .text {
+    width: 50%;
+}
+
+.recommended-spots .text p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.recommended-spots .text a {
+    text-align: center;
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.recommended-spots .text a::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 22px;
+    right: 18px;
+}
+
+
+
+.recommended-gourmet .section-title {
+    margin-top: 120px;
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.recommended-gourmet .gourmet-item {
+    display: flex;
+}
+
+.recommended-gourmet .img {
+    width: 60%;
+    /* margin: 0 20px 20px 0; */
+    margin-bottom: 70px;
+    margin-right: 30px;
+    border-radius: 30px;
+}
+
+
+.recommended-gourmet .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recommended-gourmet .gourmet-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+
+
+.recommended-gourmet .text {
+    width: 50%;
+}
+
+.recommended-gourmet .text p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.recommended-gourmet .text a {
+    text-align: center;
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.recommended-gourmet .text a::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 22px;
+    right: 18px;
+}
+
+/* map.html */
+#map {
+    width: 90%;
+    height: 500px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(180, 180, 180, 0.2);
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f0f7f2;
+    color: #4b6258;
+}
+
+/* 旅の記事 */
+.article {
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.article h1 {
+    font-size: 40px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.date {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+.article-body h2 {
+    font-size: 30px;
+    margin-top: 1.5rem;
+    color: #6e4d33;
+}
+.article-body p{
+    font-size: 18px;
+}
+
+.article-image {
+    width: 90%;
+    display: block;
+    max-height: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto 1rem;
+}
+/* 全て */
+.sp-br {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+
+    .logo {
+        max-width: 150px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    /* ハンバーガーメニュー */
+    main {
+        padding-top: 60px;
+    }
+
+    header {
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+    }
+
+    header .hamburger {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        position: fixed;
+        top: 5px;
+        right: 10px;
+        z-index: 30;
+    }
+
+    header .hamburger span {
+        width: 30px;
+        height: 3px;
+        background-color: #00AEEF;
+        display: inline-block;
+        position: absolute;
+        left: 10px;
+        transition: all 0.4s;
+    }
+
+    header .hamburger span:nth-of-type(1) {
+        top: 16px
+    }
+
+    span:nth-of-type(2) {
+        top: 25px
+    }
+
+    span:nth-of-type(3) {
+        top: 34px
+    }
+
+    header .navi {
+        width: 50%;
+        height: 100vh;
+        background-color: #AFDFE4;
+        position: fixed;
+        right: -50%;
+        z-index: 20;
+        transition: all 0.6s;
+    }
+
+    header .navi .nav-links {
+        display: flex;
+        justify-content: center;
+        /* 中央寄せ */
+        align-items: center;
+        /* 中央寄せ */
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        padding-top: 270px;
+        overflow: auto;
+        /* メニュー内でスクロールが可能 */
+        gap: 0;
+    }
+
+    header .navi .nav-links a {
+        color: #00AEEF;
+        font-size: 1.2rem;
+        text-align: center;
+        display: block;
+        padding: 10px 0;
+        line-height: 0.1;
+    }
+
+    header .navi .nav-links li {
+        padding: 10px 0;
+        margin-left: 0;
+        margin: 0.5rem 0;
+    }
+
+    header .navi.active {
+        right: 0;
+    }
+
+    header .hamburger.active span:nth-of-type(1) {
+        top: 24px;
+        transform: rotate(-45deg);
+    }
+
+    header .hamburger.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    header .hamburger.active span:nth-of-type(3) {
+        top: 24px;
+        transform: rotate(45deg);
+    }
+
+    /* 全て */
+    .sp-br {
+        display: block;
+    }
+    /* ホーム */
+    .mainvisual img {
+            height: 250px;
+            /* 好きな高さに調整 */
+            object-fit: cover;
+            /* はみ出た部分を隠してトリミング風に見せる */
+            width: 100%;
+            /* 横幅いっぱいに */
+    }
+    .hero h2{
+        font-size: 25px;
+    }
+    .hero p{
+        font-size: 16px;
+    }
+    .intro h3{
+        font-size: 22px;
+    }
+    .intro p{
+        font-size: 14px;
+    }
+    .latest-trips h4{
+        font-size: 14px;
+    }
+
+    /* about.html */
+        .profile {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .profile img {
+            width: 90%;
+            height: auto;
+        }
+    
+        /* 好きな都道府県：1列 or 2列に */
+        .favorite-prefecture .section-title{
+            font-size: 25px;
+        }
+        .favorite-prefecture .item {
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+        .favorite-prefecture .item .rank {
+            font-size: 18px;
+        }
+        .favorite-prefecture .item .title {
+            font-size: 18px;
+        }
+        .favorite-prefecture .item p{
+            font-size: 13px;
+        }
+        .favorite-prefecture .item li {
+            max-width: 90%;
+        }
+    
+        /* 旅の持ち物：縦並びに変更 */
+        .belongings .section-title{
+            font-size: 30px;
+        }
+        .belongings .belongings-item {
+            flex-direction: column;
+            align-items: center;
+        }
+        .belongings-item:nth-of-type(2) {
+            flex-direction: column-reverse;
+        }
+        .belongings .img,
+        .belongings-item:nth-of-type(2) .img {
+            width: 90%;
+            margin: 0 auto 20px;
+        }
+        .belongings .text:nth-of-type(2) {
+            margin-right: 40px;
+            margin-bottom: 40px;
+        }
+        .belongings .text:nth-of-type(1) {
+            margin-left: 40px;
+        }
+        .belongings .text .belongings-title{
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        .belongings .text p {
+            font-size: 14px;
+        }
+        .belongings .text a::after {
+            top: 21px;
+        }
+/* recommended.html */
+    .recommended-spots .section-title{
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 35px;
+    }
+    .recommended-spots .spot-item{
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .recommended-spots .spot-title{
+        font-size: 25px;
+        margin-top: 0;
+    }
+    .recommended-spots .spot-item .img{
+        width: 80%;
+        margin-left: 0;
+    }
+    .recommended-spots .spot-item .text{
+        width: 90%;
+    }
+    .recommended-spots .spot-item p{
+        font-size: 15px;
+    }
+    .recommended-spots .text a::after{
+        top: 18px;
+    }
+
+
+    .recommended-gourmet .section-title{
+        font-size: 30px;
+        margin: 35px 0;
+    }
+    .recommended-gourmet .gourmet-item{
+        flex-direction: column;
+            align-items: center;
+            text-align: center;
+        margin-bottom: 60px;
+    }
+    .recommended-gourmet .gourmet-title{
+        font-size: 25px;
+        margin-top: 0;
+    }
+    .recommended-gourmet .gourmet-item .img{
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .recommended-gourmet .gourmet-item .text{
+        width: 90%;
+    }
+    .recommended-gourmet .gourmet-item p{
+        font-size: 15px;
+    }
+    .recommended-gourmet .text a::after{
+        top: 18px;
+    }
+
+/* trip.html */
+    .trip-list .trip-cards.grid {
+        grid-template-columns: 1fr;
+    }
+
+/* 旅の記事 */
+.article{
+    margin: 20px 0;
+}
+.article h1{
+    font-size: 30px;
+}
+.article-body h2{
+    font-size: 25px;
+}
+.article-body p{
+    font-size: 15px;
+}
 }
