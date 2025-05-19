@@ -17,13 +17,20 @@
         <header>
             <nav class="navbar">
                 <h1 class="logo">My Travel Diary</h1>
-                <ul class="nav-links">
-                    <li><a href="index.html">ホーム</a></li>
-                    <li><a href="about.html">プロフィール</a></li>
-                    <li><a href="trips.html">旅の記録</a></li>
-                    <li><a href="recommend.html">おすすめ</a></li>
-                    <li><a href="map.html">マップ</a></li>
-                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="navi">
+                    <ul class="nav-links">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="about.html">プロフィール</a></li>
+                        <li><a href="trips.html">旅の記録</a></li>
+                        <li><a href="recommend.html">おすすめ</a></li>
+                        <li><a href="map.html">マップ</a></li>
+                    </ul>
+                </div>
             </nav>
         </header>
             <main>
@@ -56,6 +63,7 @@
                                     
                                     <!-- 旅カード -->
                                     <div class="trip-cards grid" id="tripCards">
+                                        <div class="swiper-wrapper">
                                         <div class="trip-card" data-date="2025-02-08" data-region="大分">
                                             <a href="trips/oita.html">
                                                 <img src="images/sanrio-oita.jpeg" alt="">
@@ -135,6 +143,9 @@
                                                 <span class="trip-meta">2024年2月20日・韓国</span>
                                             </div>
                                         </div>
+                                        </div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
                                     </div>
                                 </section>
             </main>

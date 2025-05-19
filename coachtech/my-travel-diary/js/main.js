@@ -13,48 +13,94 @@ $(function(){
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+//     const regionFilter = document.getElementById("regionFilter");
+//     const dateSort = document.getElementById("dateSort");
+//     const cardsContainer = document.getElementById("tripCards");
+//     const allCards = Array.from(cardsContainer.children);
+
+//     function updateCards() {
+//         const region = regionFilter.value;
+//         const sort = dateSort.value;
+
+//         // フィルター処理
+//         let filteredCards = allCards.filter(card => {
+//             return region === "all" || card.dataset.region === region;
+//         });
+
+//         // 並び替え処理
+//         filteredCards.sort((a, b) => {
+//             const dateA = new Date(a.dataset.date);
+//             const dateB = new Date(b.dataset.date);
+//             return sort === "asc" ? dateA - dateB : dateB - dateA;
+//         });
+
+//         // 表示更新（元の要素を再配置）
+//         cardsContainer.innerHTML = "";
+//         filteredCards.forEach(card => {
+//             cardsContainer.appendChild(card);
+//         });
+
+//         // クラス切り替え（1件だけなら単列に）
+//         if (region !== "all" && filteredCards.length === 1) {
+//             cardsContainer.classList.remove("grid");
+//             cardsContainer.classList.add("single-column");
+//         } else {
+//             cardsContainer.classList.remove("single-column");
+//             cardsContainer.classList.add("grid");
+//         }
+//     }
+
+//     regionFilter.addEventListener("change", updateCards);
+//     dateSort.addEventListener("change", updateCards);
+//     updateCards(); // 初期表示
+// });
+let swiper = null;
+
+  document.addEventListener("DOMContentLoaded", () => {
     const regionFilter = document.getElementById("regionFilter");
     const dateSort = document.getElementById("dateSort");
-    const cardsContainer = document.getElementById("tripCards");
-    const allCards = Array.from(cardsContainer.children);
+    const wrapper = document.querySelector(".swiper-wrapper");
+    const allCards = Array.from(document.querySelectorAll(".trip-card"));
 
     function updateCards() {
-        const region = regionFilter.value;
-        const sort = dateSort.value;
+      const region = regionFilter.value;
+      const sort = dateSort.value;
 
-        // フィルター処理
-        let filteredCards = allCards.filter(card => {
-            return region === "all" || card.dataset.region === region;
-        });
+      let filteredCards = allCards.filter(card => {
+        return region === "all" || card.dataset.region === region;
+      });
 
-        // 並び替え処理
-        filteredCards.sort((a, b) => {
-            const dateA = new Date(a.dataset.date);
-            const dateB = new Date(b.dataset.date);
-            return sort === "asc" ? dateA - dateB : dateB - dateA;
-        });
+      filteredCards.sort((a, b) => {
+        const dateA = new Date(a.dataset.date);
+        const dateB = new Date(b.dataset.date);
+        return sort === "asc" ? dateA - dateB : dateB - dateA;
+      });
 
-        // 表示更新（元の要素を再配置）
-        cardsContainer.innerHTML = "";
-        filteredCards.forEach(card => {
-            cardsContainer.appendChild(card);
-        });
+      wrapper.innerHTML = "";
+      filteredCards.forEach(card => wrapper.appendChild(card));
 
-        // クラス切り替え（1件だけなら単列に）
-        if (region !== "all" && filteredCards.length === 1) {
-            cardsContainer.classList.remove("grid");
-            cardsContainer.classList.add("single-column");
-        } else {
-            cardsContainer.classList.remove("single-column");
-            cardsContainer.classList.add("grid");
-        }
+      if (swiper) {
+        swiper.update();
+      }
     }
 
     regionFilter.addEventListener("change", updateCards);
     dateSort.addEventListener("change", updateCards);
-    updateCards(); // 初期表示
-});
+
+    swiper = new Swiper(".swiper", {
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 20,
+    });
+
+    updateCards();
+  });
 
 
 const spots = [
