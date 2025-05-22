@@ -13,96 +13,84 @@ $(function(){
   });
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const regionFilter = document.getElementById("regionFilter");
-//     const dateSort = document.getElementById("dateSort");
-//     const cardsContainer = document.getElementById("tripCards");
-//     const allCards = Array.from(cardsContainer.children);
+//スライダー
+document.addEventListener('DOMContentLoaded', () => {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
 
-//     function updateCards() {
-//         const region = regionFilter.value;
-//         const sort = dateSort.value;
+  function showNextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-//         // フィルター処理
-//         let filteredCards = allCards.filter(card => {
-//             return region === "all" || card.dataset.region === region;
-//         });
+  setInterval(showNextSlide, 5000);
+});
 
-//         // 並び替え処理
-//         filteredCards.sort((a, b) => {
-//             const dateA = new Date(a.dataset.date);
-//             const dateB = new Date(b.dataset.date);
-//             return sort === "asc" ? dateA - dateB : dateB - dateA;
-//         });
+// 手動スライダー
+document.addEventListener('DOMContentLoaded', () => {
+  let currentManual = 0;
+  const manualSlides = document.querySelectorAll('.slide-manual');
+  const prevBtn = document.querySelector('.prev-manual');
+  const nextBtn = document.querySelector('.next-manual');
 
-//         // 表示更新（元の要素を再配置）
-//         cardsContainer.innerHTML = "";
-//         filteredCards.forEach(card => {
-//             cardsContainer.appendChild(card);
-//         });
+  function showManualSlide(index) {
+    manualSlides[currentManual].classList.remove('active');
+    currentManual = (index + manualSlides.length) % manualSlides.length;
+    manualSlides[currentManual].classList.add('active');
+  }
 
-//         // クラス切り替え（1件だけなら単列に）
-//         if (region !== "all" && filteredCards.length === 1) {
-//             cardsContainer.classList.remove("grid");
-//             cardsContainer.classList.add("single-column");
-//         } else {
-//             cardsContainer.classList.remove("single-column");
-//             cardsContainer.classList.add("grid");
-//         }
-//     }
+  prevBtn.addEventListener('click', () => showManualSlide(currentManual - 1));
+  nextBtn.addEventListener('click', () => showManualSlide(currentManual + 1));
+});
 
-//     regionFilter.addEventListener("change", updateCards);
-//     dateSort.addEventListener("change", updateCards);
-//     updateCards(); // 初期表示
-// });
-let swiper = null;
 
-  document.addEventListener("DOMContentLoaded", () => {
+//カードの並べ替え
+document.addEventListener("DOMContentLoaded", () => {
     const regionFilter = document.getElementById("regionFilter");
     const dateSort = document.getElementById("dateSort");
-    const wrapper = document.querySelector(".swiper-wrapper");
-    const allCards = Array.from(document.querySelectorAll(".trip-card"));
+    const cardsContainer = document.getElementById("tripCards");
+    const allCards = Array.from(cardsContainer.children);
 
     function updateCards() {
-      const region = regionFilter.value;
-      const sort = dateSort.value;
+        const region = regionFilter.value;
+        const sort = dateSort.value;
 
-      let filteredCards = allCards.filter(card => {
-        return region === "all" || card.dataset.region === region;
-      });
+        // フィルター処理
+        let filteredCards = allCards.filter(card => {
+            return region === "all" || card.dataset.region === region;
+        });
 
-      filteredCards.sort((a, b) => {
-        const dateA = new Date(a.dataset.date);
-        const dateB = new Date(b.dataset.date);
-        return sort === "asc" ? dateA - dateB : dateB - dateA;
-      });
+        // 並び替え処理
+        filteredCards.sort((a, b) => {
+            const dateA = new Date(a.dataset.date);
+            const dateB = new Date(b.dataset.date);
+            return sort === "asc" ? dateA - dateB : dateB - dateA;
+        });
 
-      wrapper.innerHTML = "";
-      filteredCards.forEach(card => wrapper.appendChild(card));
+        // 表示更新（元の要素を再配置）
+        cardsContainer.innerHTML = "";
+        filteredCards.forEach(card => {
+            cardsContainer.appendChild(card);
+        });
 
-      if (swiper) {
-        swiper.update();
-      }
+        // クラス切り替え（1件だけなら単列に）
+        if (region !== "all" && filteredCards.length === 1) {
+            cardsContainer.classList.remove("grid");
+            cardsContainer.classList.add("single-column");
+        } else {
+            cardsContainer.classList.remove("single-column");
+            cardsContainer.classList.add("grid");
+        }
     }
 
     regionFilter.addEventListener("change", updateCards);
     dateSort.addEventListener("change", updateCards);
-
-    swiper = new Swiper(".swiper", {
-      loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      slidesPerView: 1,
-      centeredSlides: true,
-      spaceBetween: 20,
-    });
-
-    updateCards();
-  });
+    updateCards(); // 初期表示
+});
 
 
+//map
 const spots = [
   {
     name: "金沢・近江町市場",
