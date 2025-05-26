@@ -27,21 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(showNextSlide, 5000);
 });
 
-// 手動スライダー
 document.addEventListener('DOMContentLoaded', () => {
-  let currentManual = 0;
-  const manualSlides = document.querySelectorAll('.slide-manual');
-  const prevBtn = document.querySelector('.prev-manual');
-  const nextBtn = document.querySelector('.next-manual');
+  document.querySelectorAll('.slider-manual').forEach((slider) => {
+    let currentManual = 0;
+    const manualSlides = slider.querySelectorAll('.slide-manual');
+    const prevBtn = slider.querySelector('.prev-manual');
+    const nextBtn = slider.querySelector('.next-manual');
 
-  function showManualSlide(index) {
-    manualSlides[currentManual].classList.remove('active');
-    currentManual = (index + manualSlides.length) % manualSlides.length;
-    manualSlides[currentManual].classList.add('active');
-  }
+    function showManualSlide(index) {
+      manualSlides[currentManual].classList.remove('active');
+      currentManual = (index + manualSlides.length) % manualSlides.length;
+      manualSlides[currentManual].classList.add('active');
+    }
 
-  prevBtn.addEventListener('click', () => showManualSlide(currentManual - 1));
-  nextBtn.addEventListener('click', () => showManualSlide(currentManual + 1));
+    // 初期表示（1枚目だけ表示）
+    manualSlides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === 0);
+    });
+
+    prevBtn.addEventListener('click', () => showManualSlide(currentManual - 1));
+    nextBtn.addEventListener('click', () => showManualSlide(currentManual + 1));
+  });
 });
 
 

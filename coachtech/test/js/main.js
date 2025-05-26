@@ -13,7 +13,23 @@ document.querySelectorAll(".filter button").forEach((button)=> {
                         }
                     });
             });
-    });
+});
+    
+
+document.addEventListener('DOMContentLoaded', () => {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showNextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  setInterval(showNextSlide, 4000);
+});
+
+
 
 // モーダル表示機能
 // const modal=document.getElementById("modal");

@@ -957,7 +957,10 @@ main {
     border-radius: 16px;
     padding: 20px;
     max-width: 800px;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
     line-height: 1.6;
@@ -972,6 +975,9 @@ main {
 
 .spot-details p {
     margin: 4px 0;
+}
+.spot-details a{
+    text-decoration: none;
 }
 
 .spot-note {
@@ -1012,10 +1018,11 @@ main {
 
 .caption {
     margin-top: 0.5rem;
-    font-size: 1rem;
     color: #333;
 }
-
+p.caption {
+    font-size: 14px;
+}
 /* 矢印ボタン */
 .prev-manual,
 .next-manual {
@@ -1037,4 +1044,24 @@ main {
 
 .next-manual {
     right: 10px;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-text {
+    margin-bottom: 75px;
+}
+.article-text2{
+    margin: 75px 0;
+}
+.article-star{
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: bold;
 }
