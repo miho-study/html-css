@@ -1060,6 +1060,9 @@ p.caption {
 .article-text2{
     margin: 75px 0;
 }
+.article-text h3{
+    margin-top: 40px;
+}
 .article-star{
     text-align: center;
     margin-bottom: 50px;
