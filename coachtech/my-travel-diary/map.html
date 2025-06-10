@@ -39,7 +39,22 @@
                 <h2>訪れた場所マップ</h2>
                 <p>クリックで写真＆紹介文を表示🌏</p>
             </section>
-            
+            <div class="filter-sort-controls">
+                <label for="region-select">地域で絞り込み：
+                <select id="region-select">
+                    <option value="all">すべて</option>
+                    <option value="hokkaido">北海道</option>
+                    <!-- <option value="tohoku">東北</option> -->
+                    <option value="kanto">関東</option>
+                    <option value="chubu">中部</option>
+                    <option value="kinki">近畿</option>
+                    <option value="chugoku">中国</option>
+                    <!-- <option value="shikoku">四国</option> -->
+                    <option value="kyushu">九州</option>
+                    <option value="korea">韓国</option>
+                    </select>
+                </label>
+            </div>
             <div id="map"></div>
         </main>
 
