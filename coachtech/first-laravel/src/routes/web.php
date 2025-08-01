@@ -21,9 +21,7 @@ use App\Http\Controllers\HelloController;
 Route::get('/', [TestController::class, 'index']);
 // Route::get('/test', [TestController::class, 'index']);
 // Route::get('/test/{text?}', [TestController::class, 'index']);
-Route::get('/test/{greeting?}', function($greeting = 'Goodmorning') {
-    return $greeting . '=おはようございます';
-  });
+Route::get('/test/{greeting?}',function($greeting = 'Goodmorning'){return $greeting . '=おはようございます';});
 Route::get('/test/{room}/{id}', function ($room, $id) {
     return 'roomが' . $room . 'でidは' . $id . 'です';
   });
