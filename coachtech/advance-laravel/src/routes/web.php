@@ -27,3 +27,4 @@ Route::post('/delete', [AuthorController::class, 'remove']);
 Route::get('/find', [AuthorController::class, 'find']);
 Route::post('/find',[AuthorController::class, 'search']);
 Route::get('/author/{author}',[AuthorController::class,'bind']);
+Route::get('/authors', [AuthorController::class, 'index']);
