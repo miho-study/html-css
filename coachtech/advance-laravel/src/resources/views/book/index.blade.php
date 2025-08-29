@@ -5,12 +5,12 @@ th {
   color: white;
   padding: 5px 40px;
 }
-tr:nth-child(odd) td{
+tr:nth-child(odd) td {
   background-color: #FFFFFF;
 }
 td {
   padding: 25px 40px;
-    background-color: #EEEEEE;
+  background-color: #EEEEEE;
   text-align: center;
 }
 </style>
@@ -24,7 +24,7 @@ td {
   @foreach ($items as $item)
   <tr>
     <td>
-      {{$item->getTitle()}}
+      {{ $item->getTitle() }}
     </td>
   </tr>
   @endforeach

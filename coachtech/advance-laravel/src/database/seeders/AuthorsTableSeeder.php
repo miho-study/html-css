@@ -38,6 +38,5 @@ class AuthorsTableSeeder extends Seeder
                   'nationality' => 'Chinese'
                 ];
                 DB::table('authors')->insert($param);
-        
     }
 }

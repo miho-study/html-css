@@ -1,4 +1,4 @@
-@extends('layouts.default')
+{{ @extends('layouts.default')
 <style>
   th {
     background-color: #289ADC;
@@ -12,6 +12,11 @@
     padding: 25px 40px;
     background-color: #EEEEEE;
     text-align: center;
+  }
+  svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
   }
 </style>
 @section('title', 'index.blade.php')
@@ -27,4 +32,5 @@
     </tr>
   @endforeach
 </table>
-@endsection
+{{ $authors->links() }}
+@endsection}}

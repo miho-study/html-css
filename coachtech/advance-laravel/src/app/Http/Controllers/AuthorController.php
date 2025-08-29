@@ -12,8 +12,7 @@ class AuthorController extends Controller
     // データ一覧ページの表示
     public function index()
     {
-        $authors = Author::all();
-        dd($authors);
+        $authors = Author::Paginate(4);
         return view('index', ['authors' => $authors]);
    }
 
@@ -64,11 +63,19 @@ class AuthorController extends Controller
     {
         return view('verror');
     }
-    public function relate()
+    // public function relate()
+// {
+//     $items = Author::all();
+//     return view('author.index', ['items' => $items]);
+// }
+public function relate()
 {
-    $items = Author::all();
-    return view('author.index', ['items' => $items]);
+    $hasItems = Author::has('book')->get();
+    $noItems = Author::doesntHave('book')->get();
+    $param = ['hasItems' => $hasItems, 'noItems' => $noItems];
+    return view('author.index',$param);
 }
+
 
 }
 
