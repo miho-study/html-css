@@ -3,24 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>フリマアプリ ログイン</title>
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'Guest')</title>
+
+    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     @yield('css')
 </head>
-<body class="guest-layout">
-    <header class="header">
-        <div class="header-utilities">
-        <div class="logo">
-            <img src="{{ asset('images/logo.svg') }}" alt="ロゴ" width="120">
-        </div>
-        </div>
-    </header>
 
-    <main>
-        @yield('content')
-    </main>
+<body>
+
+<header class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="/" class="header__logo">CoachTech</a>
+        </div>
+    </div>
+</header>
+
+<main class="guest-main">
+    @yield('content')
+</main>
+
 </body>
+
 </html>

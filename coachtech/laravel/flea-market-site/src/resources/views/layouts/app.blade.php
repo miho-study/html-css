@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>フリマアプリ</title>
-    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">  {{-- ← 追加! --}}
+    <title>@yield('title', 'MyApp')</title>
+
+    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     @yield('css')
 </head>
+
+<body>
+
 <header class="header">
     <div class="header__inner">
-        <div class="header-utilities">
-            <a href="/" class="header__logo">Todo</a>
-            <ul class="header-nav">
-                <li class="header-nav__item">
-                    <a class="header-nav__link" href="/categories">カテゴリ一覧</a>
-                </li>
-                <li class="header-nav__item">
-                    <form method="POST" action="{{ route('logout') }}" class="header-nav__form">
-                        @csrf
-                        <button type="submit" class="header-nav__link">ログアウト</button>
-                    </form>
-                </li>
-                <li class="header-nav__item">
-                    <a class="header-nav__link" href="{{ route('register') }}">新規登録</a>
-                </li>
-            </ul>
+
+        {{-- ロゴ --}}
+        <div class="header__logo">
+            <a href="/">MyApp</a>
         </div>
-    </div>
+
+        {{-- 検索フォーム --}}
+        <div class="header__search">
+            <form action="{{ route('search') }}" method="GET" class="search-form">
+                <input 
+                    type="text" 
+                    name="keyword" 
+                    class="search-input" 
+                    placeholder="なにをお探しですか？"
+                    value="{{ request('keyword') }}"
+                >
+
+            </form>
+        </div>
+
+        {{-- ログイン後のナビゲーション --}}
+<nav class="header__nav">
+        @auth
+            {{-- ログイン中に表示される --}}
+            {{-- <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                @csrf
+                <button type="submit">ログアウト</button>
+            </form> --}}
+            <a href="#" 
+   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    ログアウト
+</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">
+    @csrf
+</form>
+
+            <a href="{{ route('mypage') }}">マイページ</a>
+            <a href="{{ route('sell') }}" class="sell-btn">出品</a>
+        @endauth
+
+        @guest
+            {{-- 未ログイン時に表示される --}}
+            <a href="{{ route('login') }}">ログイン</a>
+            <a href="{{ route('mypage') }}">マイページ</a>
+            <a href="{{ route('sell') }}" class="sell-btn">出品</a>
+
+        @endguest
+    </nav>
 </header>
 
+<main class="main">
+    @yield('content')
+</main>
 
-    <main>
-        @yield('content')
-    </main>
 </body>
-
 </html>

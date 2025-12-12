@@ -13,3 +13,17 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+docker/mysql/data/
+**/.DS_Store
+**/docker/mysql/data/
+/.pnp
+.pnp.js
+
+# ビルド出力
+/dist
+
+# ログファイル
+*.log
+
+# エディタの設定、作業ディレクトリ
+.vscode
