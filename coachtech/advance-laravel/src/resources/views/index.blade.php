@@ -1,4 +1,4 @@
-{{ @extends('layouts.default')
+@extends('layouts.default')
 <style>
   th {
     background-color: #289ADC;
@@ -33,4 +33,4 @@
   @endforeach
 </table>
 {{ $authors->links() }}
-@endsection}}
+@endsection

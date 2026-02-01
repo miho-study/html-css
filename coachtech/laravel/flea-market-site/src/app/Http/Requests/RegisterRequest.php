@@ -30,6 +30,13 @@ class RegisterRequest extends FormRequest
        ];
     }
 
+    public function validated($key = null, $default = null)
+    {
+        $validated = parent::validated();
+        $validated['password_confirmation'] = $this->input('password_confirmation');
+        return $key ? ($validated[$key] ?? $default) : $validated;
+    }
+
     public function messages()
     {
         return [

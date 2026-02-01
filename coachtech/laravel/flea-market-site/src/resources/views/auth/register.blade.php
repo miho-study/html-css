@@ -27,7 +27,7 @@
             {{-- メールアドレス --}}
             <div class="form-group">
                 <label for="email">メールアドレス</label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}" novalidate>
+                <input id="email" type="text" name="email" value="{{ old('email') }}" novalidate>
 
                 @error('email')
                 <div class="error">{{ $message }}</div>
